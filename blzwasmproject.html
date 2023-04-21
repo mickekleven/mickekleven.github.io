@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Mikael - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html"
+          ><span><img src="images/svg/portfolio-icon.svg" /></span
+        ></a>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <div class="inner">
+          <h2>Menu</h2>
+          <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+          </ul>
+          <a href="#" class="close">Close</a>
+        </div>
+      </nav>
+
+      <!-- Wrapper -->
+      <section id="wrapper">
+        <header>
+          <div class="inner">
+            <h2>Blazor wasm project</h2>
+            <p>A step by step continuing process</p>
+
+			<img src="/images/svg/step-by-step-icon.svg">
+
+          </div>
+
+
+
+        </header>
+
+        <!-- Content -->
+        <div class="wrapper">
+          <div class="inner">
+            <section>
+              <h3 class="major">The story</h3>
+              <p>
+                From the start I wasn't really sure of my intentions and what to build. It is always difficult to start building something without a clear strategy. My main goal was to stay up to date
+                width Blazor. Over the years I have created quite a few junk components which have in no way been wasted. I can still go back to that code today and have certain aha experiences about
+                things that I have forgotten or for other reasons have abandoned. <br /><br />
+
+                A lot has happened around Blazor but much of the old code can be reused with smaller changes which is definitely good. What I have changed in my way of thinking is to build components
+                where I make a lot of use of RenderFragment, which I do in almost all cases nowadays because the reduction of code is enormous. It has become an app consisting more of templates where
+                I put most of the focus on the specific parts. This makes it a lot easier, but it can also be more complicated as the approach is so generic. <br /><br />
+
+                Moreover, I see every little part as a component today. I always try to build minimal components based on single responsibility, but it is also important to be careful about how deep
+                the component depth should be. It can easily happen that the component depth drags on if not paying attention to it. Which can be extremely difficult to maintain. What I'm thinking
+                about is when results should be returned all the way up to the parent. So I always keep in mind to aim for a maximum depth of no more than 3.
+              </p>
+            </section>
+
+            <section>
+              <ul>
+                <li>Using HttpClientFactory with custom configuration</li>
+                <li>
+                  Created a cleaner approach in program.cs, both for api and client, with additional extension methods, which aims to keep down the amount of registrations and other code from over
+                  populating the file with lots of code.
+                </li>
+
+                <li>
+                  Implementation of AccessCode aimed at increasing security. When a user enters a valid access code, the login form is displayed. Without a valid access code, it is not possible to
+                  proceed further.
+                </li>
+                <li>
+                  Implementation of streaming functionality for all Get get-requests within the customized httpclient. Normal Crud operation works as it should. Here I use HttpPost, HttpPut and
+                  HttpPatch by the book.
+                </li>
+                <li>Implementation of Generic DB Repositories/UnitOfWork related all database access.</li>
+                <li>Isolation of authentication/Authorization in a separate class library. However, the controller still remains in the api project of normal reason</li>
+                <li>Development of generic list components with the very purpose of keeping down code duplicates.</li>
+                <li>The app only uses dtos to send data back and forth between server and client.</li>
+                <li>Created a couple of action filters among these Email and modelstate filters.</li>
+                <li>Implemented an own SecretStore that in many ways mimics MS Azure and the secretstore there. and the foremost reason for this is to remove sensitive keys from appsettings.json.</li>
+                <li>Built up a library with useful helpers and extension classes that can only be reached from the API.</li>
+                <li>Proprietary responsive css design using sass.</li>
+                <li>
+                  Developed an own app state handler that handles the app's various events. CascadingValue naturally works very well and not so resource-demanding, even without IsFixed, as before. But
+                  the problem here is that it can only be sent down in the hierarchy. An app like this returns a lot and then it is better with a statebag because the need to update and read out
+                  happens very often and intensively. The state handler is a service that is injected into the components that requires to read and update the state bag. Here, for example, I use
+                  CascadingValue if the underlying component also needs to have access to the statebag. There is much more to tell about this but in general it is possible to compare this Statehandler
+                  with React, redux, it works in similar ways for those who are familiar with this kind of global state implementation.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h3 class="major">Authentication</h3>
+              <p>
+                There is a lot to talk about in this area because it is so extensive. However, Microsoft has simplified all this with their templates so it's not a big deal setting it all up.
+                Otherwise, it would be too complicated to set everything all by yourself. This app uses a mix of UserIdentity and jwt token where the token implementation is self-developed with jwt as
+                a base. What I mean by this is that the app doesn't get a token from Azure AD but rather it is created on the app api according to the jwt setup.
+              </p>
+
+              <ul>
+                <li>
+                  In a standard fashion, the jwt token is created on the api which in turn is sent back to the client via the response. If all goes well, the token is stored in a cookie. This token is
+                  checked regularly and renewed when the time is up. The token alone is not enough to make requests against api where it is required that the user is authenticated.
+                </li>
+                <li>
+                  Since there exist a gloabal state handler, the app is well aware that the user is logged in and what role this user has. Depending on role availability, the user can access resources
+                  that the role allows.
+                </li>
+                <li>Refresh token, stored in the database is also utilized during requests</li>
+                <li>Cors policy is added</li>
+                <li>Attribute [Authorize(Roles="Role, Role,....")] are utilized when needed</li>
+                <li>
+                  information sent between api and client is at it's bare minimum, data of sensitive nature is definitely not send over the wire. Only dto:s are used to transport data between api and
+                  client
+                </li>
+                <li>On the client side, different layouts are utilized depending on whether they are public visitors or logged in users, which also is based on what permission/role the user hold.</li>
+              </ul>
+            </section>
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
