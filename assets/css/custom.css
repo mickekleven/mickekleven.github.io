@@ -63,3 +63,16 @@
 h4 {
     padding:20px 0 10px;
 }
+
+
+.profile-img {
+    border-radius: 50% !important;
+    box-shadow: 5px 5px 1px darkgray;
+    max-width:300px;
+}
+
+@media (max-width: 764px) {
+    .profile-img {
+        width:70%;
+    }
+}
