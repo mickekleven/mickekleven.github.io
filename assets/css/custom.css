@@ -76,3 +76,31 @@ h4 {
         width:70%;
     }
 }
+
+/* Background image */
+
+.bg-img {
+    z-index: 2;
+    position: fixed;
+    top:5rem;
+    background-image: url("/images/me-img.png");
+    height: 100vh;
+    width:25%;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    right:2rem;
+}
+
+@media (max-width:1200px) {
+    .bg-img {
+        top:10rem;
+        right:0rem;
+    }
+}
+
+@media (max-width:900px) {
+    .bg-img {
+        width:50%;
+        right:-2rem;
+    }
+}
