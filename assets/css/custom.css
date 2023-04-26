@@ -104,3 +104,9 @@ h4 {
         right:-2rem;
     }
 }
+
+
+/* Placement and space */
+.m-top-2 {
+    margin-top:2rem;
+}
