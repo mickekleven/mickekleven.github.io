@@ -1,5 +1,5 @@
 
-
+@import url('https://fonts.googleapis.com/css?family=Caveat');
 
 .cu-badge {
     position: relative;
@@ -109,4 +109,16 @@ h4 {
 /* Placement and space */
 .m-top-2 {
     margin-top:2rem;
+}
+
+/*
+font families
+*/
+
+.fs-signature {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    font-family: 'Caveat', sans-serif;
 }
