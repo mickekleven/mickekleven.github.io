@@ -37,3 +37,44 @@
     color: white;
     transform: rotateY(180deg);
   }
+
+
+  /* text animation fx */
+
+.text-right-left-fx {
+  width: 100%;
+  background-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.p-anim {
+    display: inline-block;
+    color: #FFF;
+    padding-left: 100%;
+    animation-iteration-count: 1;
+    animation: move 25s linear;
+    text-transform: uppercase;
+}
+
+@keyframes move {
+    0%   { 
+      filter:blur(0px);
+      transform: translate(0, 0); 
+      
+    }
+
+    100% {
+      color:yellow;
+      transform: translate(-100%, 0); 
+
+    }
+}
+
+@media (max-width:764px) {
+  .text-right-left-fx {
+    display:none;
+  }
+}
