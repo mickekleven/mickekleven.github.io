@@ -1,3 +1,7 @@
+// Globals
+
+const delayTime = 3000;
+
 let parentAnchor = document.getElementById("parentAnchor");
 let anchorLink = document.querySelector("#anchorElement");
 
@@ -20,11 +24,11 @@ async function scroller() {
       i = 0;
     }
 
-    await sleep(5000);
+    await sleep(2000);
   }
 
   //result.style.opacity = 0.2;
-  await sleep(1000);
+  await sleep(delayTime);
   //result.style.display = "none";
 }
 
