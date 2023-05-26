@@ -55,7 +55,7 @@
     color: #FFF;
     padding-left: 100%;
     animation-iteration-count: 1;
-    animation: move 25s linear;
+    animation: move 25s linear 5500ms;
     text-transform: uppercase;
 }
 
@@ -67,7 +67,7 @@
     }
 
     100% {
-      color:yellow;
+      color:orange;
       transform: translate(-100%, 0); 
 
     }

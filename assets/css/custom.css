@@ -130,3 +130,67 @@ font families
     height: 0.5px;
     background-color: #fff;
 }
+
+
+
+.show-and-hide {
+
+    font-size:2rem;
+    text-transform: uppercase;
+    opacity:0;
+    text-align:center;
+    box-sizing: content-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    animation: kf-show-and-hide 5000ms ease-in-out 1000ms 1 forwards;
+
+}
+
+
+/* Show and hide text element */
+@keyframes kf-show-and-hide {
+
+    0% {
+        font-size:2rem;
+        opacity: 0;
+    }
+    30% {
+        font-size: 3rem;;
+        opacity: 1;
+    }
+
+    90% {
+        font-size: 3rem;;
+        opacity: 1;
+        color:orange;
+    }
+    90% {
+        font-size: 3rem;;
+        opacity: 1;
+    }
+
+    100% {
+        font-size: 1rem;
+        opacity: 0;
+    }
+}
+
+
+@media (max-width:764px) {
+    .show-and-hide {
+        display:none;
+    }
+}
+
+
+.pos-abs {
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto; 
+}
+
+.p-top-4 {
+    padding-top:4rem;
+}
