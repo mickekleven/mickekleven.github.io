@@ -65,6 +65,14 @@ h4 {
 }
 
 
+.img-bg {
+    width:100%;
+    position: absolute;
+    object-fit:cover;
+    top:0;
+    left:0;
+}
+
 .profile-img {
     border-radius: 50% !important;
     box-shadow: 5px 5px 1px darkgray;
