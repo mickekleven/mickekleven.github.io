@@ -66,6 +66,7 @@ h4 {
 
 
 .img-bg {
+    z-index:-1;
     width:100%;
     position: absolute;
     object-fit:cover;
@@ -78,6 +79,14 @@ h4 {
     box-shadow: 5px 5px 1px darkgray;
     max-width:300px;
 }
+
+@media (max-width: 1400px) {
+    .img-bg{
+        z-index:0;
+    }
+}
+
+
 
 @media (max-width: 764px) {
     .profile-img {
@@ -147,11 +156,9 @@ font families
     text-transform: uppercase;
     opacity:0;
     text-align:center;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    animation: kf-show-and-hide 5000ms ease-in-out 1000ms 1 forwards;
-
+    animation: kf-show-and-hide 5000ms ease-in 1000ms 1 forwards;
 }
 
 
