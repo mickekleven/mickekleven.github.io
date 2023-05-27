@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url("https://fonts.googleapis.com/css?family=Caveat|Shadows+Into+Light");
 
 .cu-badge {
     position: relative;
@@ -138,6 +138,10 @@ font families
     text-transform: uppercase;
     text-decoration-line: underline;
     font-family: 'Caveat', sans-serif;
+}
+
+.fs-style-shl {
+    font-family: 'Shadows Into Light', sans-serif;
 }
 
 
