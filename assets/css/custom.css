@@ -213,3 +213,18 @@ font families
 .p-top-4 {
     padding-top:4rem;
 }
+
+/* Width and placement */
+
+.w-medium {
+    width:70%; 
+}
+
+@media (max-width:764px) {
+
+    .w-medium {
+        width:100%;
+    }
+
+
+}
