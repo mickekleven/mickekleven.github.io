@@ -156,6 +156,7 @@ font families
 
 .show-and-hide {
 
+    line-height: 0;
     font-size:2rem;
     text-transform: uppercase;
     opacity:0;
