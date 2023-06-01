@@ -234,3 +234,9 @@ font families
     color:#b37400; 
     text-shadow: 1px 1px #000;
 }
+
+/* Typography */
+
+.fs-sm {
+    font-size: 1.2rem;
+}
